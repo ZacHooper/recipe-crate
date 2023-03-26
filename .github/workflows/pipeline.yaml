@@ -13,8 +13,8 @@ on:
 
 env:
   SAM_TEMPLATE: template.yaml
-  PROD_STACK_NAME: prod-nexus ##Change name of stack here
-  TEST_STACK_NAME: test-nexus ##Change name of stack here
+  PROD_STACK_NAME: prod-recipe-crate ##Change name of stack here
+  TEST_STACK_NAME: test-recipe-crate ##Change name of stack here
   REGION: ap-southeast-2
 
 jobs:
@@ -31,16 +31,8 @@ jobs:
       - name: Assume the sam-role
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::742129616206:role/github-action-sam-role
+          role-to-assume: arn:aws:iam::373083822301:role/github-sam
           aws-region: ${{ env.REGION }}
-      
-      - name: Replace string in requirements.txt
-        run: |
-          # Find all requirements.txt files in subdirectories of the current directory
-          for file in $(find . -name requirements.txt); do
-            # Replace "<GITHUB_TOKEN>" with the value of the GITHUB_TOKEN env variable
-            sed -i "s/<GITHUB_TOKEN>/${{ secrets.UTIL_DATA_ACCESS_TOKEN }}/g" $file
-          done
         
       - name: Build resources
         run: sam build --use-container
@@ -64,16 +56,8 @@ jobs:
       - name: Assume the sam-role
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::742129616206:role/github-action-sam-role
+          role-to-assume: arn:aws:iam::373083822301:role/github-sam
           aws-region: ${{ env.REGION }}
-
-      - name: Replace string in requirements.txt
-        run: |
-          # Find all requirements.txt files in subdirectories of the current directory
-          for file in $(find . -name requirements.txt); do
-            # Replace "<GITHUB_TOKEN>" with the value of the GITHUB_TOKEN env variable
-            sed -i "s/<GITHUB_TOKEN>/${{ secrets.UTIL_DATA_ACCESS_TOKEN }}/g" $file
-          done
       
       - name: Build resources
         run: sam build --use-container
