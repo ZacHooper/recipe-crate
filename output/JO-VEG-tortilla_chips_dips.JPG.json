@@ -1,0 +1,72 @@
+{
+    "title": "CHILLI & TOMATO, CHEESE, SPRING ONION & LIME",
+    "blurb": "Tortilla chips with a creamy dip topped with chilli, tomatoes, and coriander.",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "unit": "",
+            "ingredient": "spring onions",
+            "preparation": "trimmed and finely sliced"
+        },
+        {
+            "quantity": "2",
+            "unit": "tablespoons",
+            "ingredient": "light cream",
+            "preparation": ""
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "cheese",
+            "preparation": ""
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "lime",
+            "preparation": ""
+        },
+        {
+            "quantity": "2",
+            "unit": "large",
+            "ingredient": "flour tortillas",
+            "preparation": "roughly sliced"
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "fresh red chilli",
+            "preparation": "finely sliced"
+        },
+        {
+            "quantity": "100",
+            "unit": "g",
+            "ingredient": "ripe cherry tomatoes",
+            "preparation": "quartered"
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "olive oil",
+            "preparation": ""
+        },
+        {
+            "quantity": "2",
+            "unit": "sprigs",
+            "ingredient": "fresh coriander",
+            "preparation": "leaves picked"
+        }
+    ],
+    "method": [
+        "Mix the sliced spring onions with the cream cheese, half of the lime juice, and a splash of water to create a creamy dip.",
+        "Roughly slice the tortillas and place them in a large dry non-stick frying pan on medium heat. Turn regularly until golden and crisp, then place them on a plate.",
+        "Finely slice the chilli and quarter the tomatoes. Season with sea salt and black pepper.",
+        "Drizzle 1 tablespoon of olive oil into the pan and place back on medium heat. Add the chilli and tomatoes and squeeze over the remaining lime juice. Stir vigorously for 1 minute.",
+        "Tip the chilli and tomatoes over the crispy tortillas. Dollop the creamy dip on top, and pick over the coriander leaves.",
+        "Serve with your favourite beer or a glass of chilled white wine. Smashed avo or a handful of warmed black beans and grated Cheddar make tasty topping alternatives."
+    ],
+    "other": [
+        "SERVES 2",
+        "15 MINUTES"
+    ]
+}

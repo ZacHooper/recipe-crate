@@ -1,0 +1,45 @@
+{
+    "title": "Apple pie porridge",
+    "blurb": "Everyone needs a good porridge recipe, for those mornings when only creamy, cooked oats will do. This version combines all of the flavours of apple pie, to take this comfort food to the next level. Use your favourite variety of seasonal apple, for subtle changes throughout the year.",
+    "ingredients": [
+        {
+            "quantity": "80g",
+            "unit": "(3/4 cup)",
+            "ingredient": "rolled oats",
+            "preparation": ""
+        },
+        {
+            "quantity": "400ml",
+            "unit": "(generous 1 1/2 cups)",
+            "ingredient": "sweetened almond milk",
+            "preparation": ""
+        },
+        {
+            "quantity": "pinch",
+            "unit": "",
+            "ingredient": "ground cinnamon",
+            "preparation": ""
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "apple",
+            "preparation": "grated"
+        },
+        {
+            "quantity": "handful",
+            "unit": "",
+            "ingredient": "sultanas (golden raisins)",
+            "preparation": ""
+        }
+    ],
+    "method": [
+        "Add the oats, almond milk and cinnamon to a pan and simmer over a medium-high heat for 4-5 minutes, stirring frequently.",
+        "Stir through the grated apple and sultanas and cook for a further 2-3 minutes until the apple begins to soften.",
+        "Serve in bowls and enjoy immediately."
+    ],
+    "other": [
+        "SERVES 2",
+        "EASY TIP\n\nThis porridge has enough flavour and sweetness from the apple, spices and sultanas to forgo a topping, but if you can't resist a little something, sprinkle with a little brown sugar."
+    ]
+}

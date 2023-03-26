@@ -1,0 +1,39 @@
+{
+    "title": "WATERMELON GRANITA",
+    "blurb": "To this day I'm yet to find a more refreshing treat to enjoy on a blasting hot day.",
+    "ingredients": [
+        {
+            "quantity": "220",
+            "unit": "g",
+            "ingredient": "caster sugar",
+            "preparation": ""
+        },
+        {
+            "quantity": "2",
+            "unit": "kg",
+            "ingredient": "watermelon",
+            "preparation": "rind removed, roughly chopped"
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "lemon",
+            "preparation": "juiced"
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "shredded mint",
+            "preparation": "to garnish"
+        }
+    ],
+    "method": [
+        "Combine the sugar and 250 ml (1 cup) water in a saucepan over medium heat and stir until the sugar has dissolved. Remove the pan from the heat and set aside.",
+        "Puree the watermelon in a food processor, then pour in the sugar syrup and lemon juice and blend until smooth and well combined.",
+        "Pour the mixture into a couple of clean baking trays, then pop them in the freezer. Come back every hour or so and scrape with a fork to break up the ice crystals that have formed. Repeat this four to five times until you have a fluffy, icy consistency.",
+        "To serve, spoon the granita into bowls, garnish with mint and enjoy as an icy respite from a hot day in the garden."
+    ],
+    "other": [
+        "SERVES 8"
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "title": "Pomegranate, orange and pistachio parfait",
+    "blurb": "For a light yet impressive breakfast, treat yourself to a parfait, jewelled with pomegranate and vibrant orange. The mint and pistachio topping adds that all important freshness and crunch.",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "unwaxed orange",
+            "preparation": "peeled and thinly sliced into rounds"
+        },
+        {
+            "quantity": "seeds of 1",
+            "unit": "",
+            "ingredient": "pomegranate",
+            "preparation": ""
+        },
+        {
+            "quantity": "8",
+            "unit": "tbsp",
+            "ingredient": "vanilla soya yogurt",
+            "preparation": ""
+        },
+        {
+            "quantity": "2",
+            "unit": "tbsp",
+            "ingredient": "shelled pistachios",
+            "preparation": "chopped"
+        },
+        {
+            "quantity": "4",
+            "unit": "",
+            "ingredient": "mint leaves",
+            "preparation": "finely chopped"
+        }
+    ],
+    "method": [
+        "In two small serving glasses, arrange layers of orange slices, pomegranate seeds and yogurt, finishing with a layer of yogurt at the top of the glass.",
+        "Scatter with chopped pistachios and mint just before serving."
+    ],
+    "other": [
+        "SERVES 2",
+        "If you're short of time, you can buy packs of pomegranate seeds in large supermarkets; this will save you the effort of removing the juicy seeds of the fruit. However, if you're using a whole pomegranate, simply slice the fruit in half with the seeds facing downwards over a bowl, then whack with a wooden spoon for easy removal."
+    ]
+}

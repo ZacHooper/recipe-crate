@@ -1,0 +1,112 @@
+{
+    "title": "Aloo Gobi",
+    "blurb": "Aloo Gobi is a vegan dish made with cauliflower and potatoes cooked in a fragrant blend of spices.",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "unit": "thsp",
+            "ingredient": "vegetable oil",
+            "preparation": ""
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "onion",
+            "preparation": "thinly sliced"
+        },
+        {
+            "quantity": "2",
+            "unit": "",
+            "ingredient": "garlic cloves",
+            "preparation": "very finely chopped"
+        },
+        {
+            "quantity": "4-5cm piece",
+            "unit": "",
+            "ingredient": "fresh ginger",
+            "preparation": "peeled and grated"
+        },
+        {
+            "quantity": "1",
+            "unit": "tsp",
+            "ingredient": "black mustard seeds",
+            "preparation": ""
+        },
+        {
+            "quantity": "/4",
+            "unit": "tsp",
+            "ingredient": "ground turmeric",
+            "preparation": ""
+        },
+        {
+            "quantity": "/s",
+            "unit": "tsp",
+            "ingredient": "ground cumin",
+            "preparation": ""
+        },
+        {
+            "quantity": "'/s",
+            "unit": "tsp",
+            "ingredient": "ground coriander",
+            "preparation": ""
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "small green chilli",
+            "preparation": "deseeded if you prefer less heat, chopped"
+        },
+        {
+            "quantity": "6-8",
+            "unit": "",
+            "ingredient": "curry leaves",
+            "preparation": ""
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "small or medium cauliflower",
+            "preparation": "broken or cut into large bite-sized florets (keep any light-coloured inner green leaves)"
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "tomato",
+            "preparation": "diced"
+        },
+        {
+            "quantity": "1/4",
+            "unit": "",
+            "ingredient": "lemon",
+            "preparation": "juice of, plus a little extra to finish"
+        },
+        {
+            "quantity": "400",
+            "unit": "g",
+            "ingredient": "waxy potatoes",
+            "preparation": "peeled and cut into even chunks"
+        },
+        {
+            "quantity": "handful",
+            "unit": "",
+            "ingredient": "fresh coriander leaves",
+            "preparation": "roughly chopped"
+        },
+        {
+            "quantity": "",
+            "unit": "",
+            "ingredient": "sea salt",
+            "preparation": ""
+        }
+    ],
+    "method": [
+        "Heat the oil in a large heavy-based pan. Add the onion and fry on a low heat for 10 minutes, stirring now and then to stop it catching. If it does start to catch, add a splash of water and turn the heat a little lower.",
+        "Add the garlic, ginger, mustards seeds, turmeric, cumin, coriander, chilli and curry leaves. Turn the heat up a little and fry, stirring, until you hear the mustard seeds pop.",
+        "Add the cauliflower florets and leaves, the tomato and lemon juice and a splash of water. Cover and cook on a very low heat, stirring now and then, for 10 minutes or until the cauliflower is tender. Adda splash more water if the veg starts to catch on the bottom of the pan.",
+        "Meanwhile, cook the potatoes in boiling water for 8-10 minutes, until just tender. Drain and set aside.",
+        "When the cauliflower is almost tender, add the potatoes and stir to warm them through. Remove the pan from the heat, stir in the fresh coriander, season with salt and add more lemon juice to taste. Serve with warm naan bread and mango chutney."
+    ],
+    "other": [
+        "SERVES 2"
+    ]
+}
