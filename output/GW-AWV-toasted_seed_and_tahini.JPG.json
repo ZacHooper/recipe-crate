@@ -1,0 +1,68 @@
+{
+    "title": "Toasted Seed and Tahini Slaw",
+    "blurb": "Mixed toasted seeds add extra crunch, flavour and nutrients to coleslaw. You needn't stick to cabbage and carrots - try grating any other root veg you have in your box. This one\u2019s good served with chicken wings and potato wedges.",
+    "ingredients": [
+        {
+            "quantity": "4",
+            "unit": "tbsp",
+            "ingredient": "mixed seeds",
+            "preparation": "e.g. sunflower, sesame, pumpkin, linseed"
+        },
+        {
+            "quantity": "4",
+            "unit": "tbsp",
+            "ingredient": "plain yoghurt"
+        },
+        {
+            "quantity": "1",
+            "ingredient": "garlic clove",
+            "preparation": "crushed or grated"
+        },
+        {
+            "quantity": "1",
+            "unit": "tbsp",
+            "ingredient": "light tahini",
+            "preparation": "sesame paste"
+        },
+        {
+            "quantity": "1",
+            "ingredient": "lemon",
+            "preparation": "juice of"
+        },
+        {
+            "quantity": "1/2",
+            "ingredient": "onion",
+            "preparation": "very finely sliced",
+            "comment": "(red or white)"
+        },
+        {
+            "quantity": null,
+            "ingredient": "Savoy cabbage",
+            "preparation": "core and tough ribs removed, leaves very finely shredded"
+        },
+        {
+            "quantity": "2",
+            "ingredient": "carrots",
+            "preparation": "peeled and coarsely grated"
+        },
+        {
+            "quantity": null,
+            "ingredient": "salt"
+        },
+        {
+            "quantity": null,
+            "ingredient": "black pepper"
+        }
+    ],
+    "method": [
+        "Toast the mixed seeds in a dry frying pan for 1-2 minutes over a medium heat, until fragrant.",
+        "Mix the yoghurt, garlic, tahini and lemon juice in a large bowl.",
+        "Add the cabbage, carrot, onion and toasted seeds, season with salt and pepper and toss gently to combine."
+    ],
+    "other": [
+        "SERVES 4-6 AS A SIDE",
+        "vegetarian",
+        "VARIATION: This also works well with shredded red cabbage.",
+        "PAGE 53"
+    ]
+}

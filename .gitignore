@@ -5,6 +5,9 @@ __pycache__/
 
 venv/
 
+# Test data
+sample_data/recipes/
+
 # C extensions
 *.so
 

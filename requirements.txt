@@ -2,3 +2,6 @@ requests
 boto3
 openai
 langchain
+opencv-python
+pytesseract
+numpy

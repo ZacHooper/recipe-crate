@@ -1,0 +1,108 @@
+{
+    "title": "Silverbeet and Chickpea Stew",
+    "blurb": "A filling and healthy dish made with silverbeet and chickpeas",
+    "ingredients": [
+        {
+            "quantity": "olive oil, for cooking",
+            "unit": "",
+            "ingredient": "",
+            "preparation": ""
+        },
+        {
+            "quantity": "1 bunch",
+            "unit": "",
+            "ingredient": "silverbeet",
+            "preparation": "stalks removed and finely chopped, leaves shredded"
+        },
+        {
+            "quantity": "1",
+            "unit": "",
+            "ingredient": "onion",
+            "preparation": "finely chopped"
+        },
+        {
+            "quantity": "4",
+            "unit": "",
+            "ingredient": "garlic cloves",
+            "preparation": "finely chopped"
+        },
+        {
+            "quantity": "1",
+            "unit": "long red chilli",
+            "ingredient": "",
+            "preparation": "finely chopped"
+        },
+        {
+            "quantity": "1/2",
+            "unit": "teaspoon",
+            "ingredient": "ground cumin",
+            "preparation": ""
+        },
+        {
+            "quantity": "1/4",
+            "unit": "teaspoon",
+            "ingredient": "cayenne pepper",
+            "preparation": ""
+        },
+        {
+            "quantity": "1",
+            "unit": "teaspoon",
+            "ingredient": "ground coriander",
+            "preparation": ""
+        },
+        {
+            "quantity": "1",
+            "unit": "tablespoon",
+            "ingredient": "tomato paste",
+            "preparation": ""
+        },
+        {
+            "quantity": "400 g",
+            "unit": "",
+            "ingredient": "can chickpeas",
+            "preparation": "drained and rinsed"
+        },
+        {
+            "quantity": "1",
+            "unit": "lemon",
+            "ingredient": "finely grated zest and juice",
+            "preparation": ""
+        },
+        {
+            "quantity": "",
+            "unit": "salt and black pepper",
+            "ingredient": "",
+            "preparation": ""
+        },
+        {
+            "quantity": "250 g (1 cup)",
+            "unit": "",
+            "ingredient": "natural Greek-style yoghurt",
+            "preparation": ""
+        },
+        {
+            "quantity": "1/2 bunch",
+            "unit": "",
+            "ingredient": "coriander",
+            "preparation": "leaves picked and roughly torn"
+        },
+        {
+            "quantity": "60 g (1/2 cup)",
+            "unit": "",
+            "ingredient": "slivered almonds",
+            "preparation": "toasted"
+        }
+    ],
+    "method": [
+        "Heat a splash of olive oil in a deep heavy-based frying pan over medium heat.",
+        "Toss in the silverbeet stalk and the onion and cook for 3 minutes or until softened.",
+        "Add the garlic, chilli and ground spices and cook for another couple of minutes until aromatic.",
+        "Stir in the tomato paste and cook for another 2 minutes or until the paste has darkened and become aromatic.",
+        "Pop the chickpeas and shredded silverbeet leaves in the pan and cook for 3 minutes or until the leaves have softened.",
+        "Finally, stir in the lemon zest and juice and season to taste.",
+        "Spoon the silverbeet mixture into two bowls and top with yoghurt, coriander and almonds."
+    ],
+    "other": [
+        "SERVES 2"
+    ]
+}
