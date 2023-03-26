@@ -1,0 +1,83 @@
+name: Pipeline
+
+permissions:
+  id-token: write
+  contents: read
+
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'test'
+
+env:
+  SAM_TEMPLATE: template.yaml
+  PROD_STACK_NAME: prod-nexus ##Change name of stack here
+  TEST_STACK_NAME: test-nexus ##Change name of stack here
+  REGION: ap-southeast-2
+
+jobs:
+  build-prod-and-deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+  
+      - name: Assume the sam-role
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::742129616206:role/github-action-sam-role
+          aws-region: ${{ env.REGION }}
+      
+      - name: Replace string in requirements.txt
+        run: |
+          # Find all requirements.txt files in subdirectories of the current directory
+          for file in $(find . -name requirements.txt); do
+            # Replace "<GITHUB_TOKEN>" with the value of the GITHUB_TOKEN env variable
+            sed -i "s/<GITHUB_TOKEN>/${{ secrets.UTIL_DATA_ACCESS_TOKEN }}/g" $file
+          done
+        
+      - name: Build resources
+        run: sam build --use-container
+      
+      - name: Deploy to production account
+        run: |
+          sam deploy --stack-name ${PROD_STACK_NAME}  --parameter-overrides=Environment=prod  --capabilities CAPABILITY_IAM  --region ${REGION}  --resolve-image-repos --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
+          
+  
+  build-test-and-deploy:
+    if: startsWith(github.ref, 'refs/heads/test')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+  
+      - name: Assume the sam-role
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::742129616206:role/github-action-sam-role
+          aws-region: ${{ env.REGION }}
+
+      - name: Replace string in requirements.txt
+        run: |
+          # Find all requirements.txt files in subdirectories of the current directory
+          for file in $(find . -name requirements.txt); do
+            # Replace "<GITHUB_TOKEN>" with the value of the GITHUB_TOKEN env variable
+            sed -i "s/<GITHUB_TOKEN>/${{ secrets.UTIL_DATA_ACCESS_TOKEN }}/g" $file
+          done
+      
+      - name: Build resources
+        run: sam build --use-container
+      
+      - name: Deploy to testing account
+        run: |
+          sam deploy --stack-name ${TEST_STACK_NAME} --parameter-overrides=Environment=test --capabilities CAPABILITY_IAM  --region ${REGION}  --resolve-image-repos --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
