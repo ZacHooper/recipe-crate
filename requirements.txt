@@ -5,3 +5,4 @@ langchain
 opencv-python
 pytesseract
 numpy
+supabase

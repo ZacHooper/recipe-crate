@@ -18,6 +18,7 @@ from langchain.prompts.chat import (
 )
 from pydantic import BaseModel, Field, validator
 from pytesseract import pytesseract
+from supabase import create_client, Client
 
 from utils.aws import get_secret_dict
 
@@ -30,6 +31,9 @@ if platform.system() == "Darwin":
     os.environ["AWS_PROFILE"] = "personal"
 
 secret_dict = get_secret_dict("prod/recipe-crate/openai-key")
+SUPABASE_URL = secret_dict["SUPABASE_URL"]
+SUPABASE_KEY = secret_dict["SUPABASE_KEY"]
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
 class Recipe(BaseModel):
@@ -106,13 +110,21 @@ def lambda_handler(event, context):
         prompt=PromptTemplate(
             template="""You are an assistant that parses raw text. 
             The text you are going to parse is a recipe read by an OCR. 
-            The text data is very messy and needs to be structuered by you.
+            The text data is very messy and needs to be structured by you.
             You will parse the text into 5 parts:
             1. The title
             2. The ingredients
             3. The method
             4. The blurb -> a short description of the recipe
             5. Any other information -> for example how many it serves, or what page it's on, etc.
+
+            Sometimes you may come across some text that hasn't parsed correctly.
+            For example:
+            - \u2019 -> '
+            - \u201c -> "
+            - \u201d -> "
+
+            If you come across any of these, you can replace them with the correct character.
 
             {format_instructions}
             
@@ -134,6 +146,7 @@ def lambda_handler(event, context):
         ]
     )
 
+    print(chat_prompt_template.format(text=text))
     # Initialise AI
     chat = ChatOpenAI(
         temperature=0.7,
@@ -161,18 +174,44 @@ def lambda_handler(event, context):
 
 
 if __name__ == "__main__":
-    # Get all files im sample_data/recipes
-    for filename in os.listdir("sample_data/recipes"):
-        image_path = f"sample_data/recipes/{filename}"
-        logger.info(f"Reading image: {image_path}")
-        # Open image and convert to base64
-        with open(image_path, "rb") as f:
-            image = base64.b64encode(f.read())
-        # Create event
-        event = {"body": {"image": image}}
-        # Run Lambda
-        res = lambda_handler(event, None)
+    image_path = "sample_data/IMG_0167 copy.png"
+    logger.info(f"Reading image: {image_path}")    
 
-        with open(f"output/{filename}.json", "w") as f:
-            logger.info(f"Writing output to: {f.name}")
-            f.write(res["body"])
+    # Open image and convert to base64
+    with open(image_path, "rb") as f:
+        image = base64.b64encode(f.read())
+    
+    # Create event
+    event = {"body": {"image": image}}
+
+    # Run Lambda
+    res = lambda_handler(event, None)
+
+    recipe = json.loads(res["body"])
+
+    logger.info(f"Writing output to database...")
+    data, count = supabase.table('recipes').insert(recipe).execute()
+
+    print(data)
+
+
+    # with open(f"output/{image_path.replace('sample_data/', '')}_2.json", "r") as f:
+    #     logger.info(f"Writing output to: {f.name}")
+    #     f.write(res["body"])
+
+
+    # # Get all files im sample_data/recipes
+    # for filename in os.listdir("sample_data/recipes"):
+    #     image_path = f"sample_data/recipes/{filename}"
+    #     logger.info(f"Reading image: {image_path}")
+    #     # Open image and convert to base64
+    #     with open(image_path, "rb") as f:
+    #         image = base64.b64encode(f.read())
+    #     # Create event
+    #     event = {"body": {"image": image}}
+    #     # Run Lambda
+    #     res = lambda_handler(event, None)
+
+    #     with open(f"output/{filename}.json", "w") as f:
+    #         logger.info(f"Writing output to: {f.name}")
+    #         f.write(res["body"])
