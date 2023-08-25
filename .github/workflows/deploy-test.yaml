@@ -1,0 +1,41 @@
+name: Pipeline
+
+permissions:
+  id-token: write
+  contents: read
+
+
+on:
+  push:
+    branches:
+      - 'main'
+
+env:
+  SAM_TEMPLATE: template.yaml
+  STACK_NAME: test-recipe-crate ##Change name of stack here
+  REGION: ap-southeast-2
+
+jobs:
+  
+  build-test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+  
+      - name: Assume the sam-role
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::373083822301:role/github-sam
+          aws-region: ${{ env.REGION }}
+      
+      - name: Build resources
+        run: sam build --use-container
+      
+      - name: Deploy to testing account
+        run: |
+          sam deploy --stack-name ${STACK_NAME} --parameter-overrides=Environment=test --capabilities CAPABILITY_IAM  --region ${REGION}  --resolve-image-repos --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
