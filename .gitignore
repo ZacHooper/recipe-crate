@@ -7,6 +7,7 @@ venv/
 
 # Test data
 sample_data/recipes/
+sample_data/recipes/*
 
 # C extensions
 *.so
