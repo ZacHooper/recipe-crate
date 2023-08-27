@@ -2,9 +2,5 @@ requests
 boto3
 openai
 langchain
-opencv-python
-pytesseract
 numpy
 supabase
-paddlepaddle
-paddleocr>=2.0.1
