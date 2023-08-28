@@ -68,7 +68,8 @@ def lambda_handler(event, context):
     logger.info("Starting Lambda")
     logger.info(event)
     # Get text from event
-    text = event["body"]["text"]
+    body = json.loads(event["body"])
+    text = body["text"]
 
     # Define Response Schema
     logger.info("Building Prompt")
