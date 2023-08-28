@@ -65,6 +65,8 @@ class Recipe(BaseModel):
 
 
 def lambda_handler(event, context):
+    logger.info("Starting Lambda")
+    logger.info(event)
     # Get text from event
     text = event["body"]["text"]
 
@@ -163,6 +165,9 @@ ONE • POT"""
 
     # Run Lambda
     res = lambda_handler(event, None)
+
+    print(json.dumps(json.loads(res["body"]), indent=4))
+    exit()
 
     recipe = json.loads(res["body"])
 

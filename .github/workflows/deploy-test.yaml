@@ -1,4 +1,4 @@
-name: Pipeline
+name: Deploy Test
 
 permissions:
   id-token: write
