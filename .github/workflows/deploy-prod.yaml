@@ -46,34 +46,34 @@ jobs:
         run: |
           sam deploy --stack-name ${STACK_NAME}  --parameter-overrides=Environment=prod  --capabilities CAPABILITY_IAM  --region ${REGION}  --resolve-image-repos --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
           
-          - name: Create release
-          uses: actions/github-script@v6
-          env:
-            VERSION_INCREMENT: ${{ github.event.inputs.version_increment }}
-          with:
-            script: |
-              async function generateTagName() {
-                const {VERSION_INCREMENT} = process.env;
-                const releases = await github.rest.repos.listReleases({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                });
-                const versions = releases.data
-                  .map(({tag_name}) => tag_name.replace(/^v/, ''))
-                  .filter(t => /^\d+\.\d+.\d+$/.test(t))
-                  .sort((a, b) => a.localeCompare(b, undefined, {numeric: true}))
-                  .reverse();
-                if (versions.length === 0) return 'v1.0.0';
-                const [major, minor, patch] = versions[0].split('.').map(Number);
-                return VERSION_INCREMENT === 'major'
-                  ? `v${major + 1}.0.0`
-                  : VERSION_INCREMENT === 'minor'
-                  ? `v${major}.${minor + 1}.0`
-                  : `v${major}.${minor}.${patch + 1}`;
-              }
-              await github.rest.repos.createRelease({
+      - name: Create release
+        uses: actions/github-script@v6
+        env:
+          VERSION_INCREMENT: ${{ github.event.inputs.version_increment }}
+        with:
+          script: |
+            async function generateTagName() {
+              const {VERSION_INCREMENT} = process.env;
+              const releases = await github.rest.repos.listReleases({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                tag_name: await generateTagName(),
-                target_commitish: context.sha,
               });
+              const versions = releases.data
+                .map(({tag_name}) => tag_name.replace(/^v/, ''))
+                .filter(t => /^\d+\.\d+.\d+$/.test(t))
+                .sort((a, b) => a.localeCompare(b, undefined, {numeric: true}))
+                .reverse();
+              if (versions.length === 0) return 'v1.0.0';
+              const [major, minor, patch] = versions[0].split('.').map(Number);
+              return VERSION_INCREMENT === 'major'
+                ? `v${major + 1}.0.0`
+                : VERSION_INCREMENT === 'minor'
+                ? `v${major}.${minor + 1}.0`
+                : `v${major}.${minor}.${patch + 1}`;
+            }
+            await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: await generateTagName(),
+              target_commitish: context.sha,
+            });
