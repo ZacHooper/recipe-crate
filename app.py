@@ -43,6 +43,7 @@ class Recipe(BaseModel):
     )
     method: list = Field(description="list of steps to make the recipe")
     other: list = Field(description="other information")
+    book: str = Field(description="book the recipe is from")
 
     def to_json(self):
         return json.dumps(
@@ -70,6 +71,7 @@ def lambda_handler(event, context):
     # Get text from event
     body = json.loads(event["body"])
     text = body["text"]
+    book = body["book"]
 
     # Define Response Schema
     logger.info("Building Prompt")
@@ -131,9 +133,18 @@ def lambda_handler(event, context):
         new_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI())
         parsed_response = new_parser.parse(response)
 
+    parsed_response.book = book
     logger.info(f"Success! Output: {parsed_response.title}")
 
-    return {"statusCode": 200, "body": parsed_response.to_json()}
+    logger.info(f"Writing output to database...")
+    data, count = (
+        supabase.table("recipes").insert(parsed_response.model_dump()).execute()
+    )
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps({"title": parsed_response.title, "success": True}),
+    }
 
 
 if __name__ == "__main__":
@@ -162,17 +173,12 @@ Remove the rice from the oven and, using an oven glove, take off the lid and rem
 Stir the garlic oil through the rice followed by the chopped parsley, mint and coriander leaves. Season with salt and pepper and top with the crispy shallots.
 42
 ONE • POT"""
-    event = {"body": {"text": text}}
+    event = {
+        "body": json.dumps({"text": text, "book": "Anna Jones - One Pot, Pan, Planet"})
+    }
 
     # Run Lambda
     res = lambda_handler(event, None)
 
     print(json.dumps(json.loads(res["body"]), indent=4))
     exit()
-
-    recipe = json.loads(res["body"])
-
-    logger.info(f"Writing output to database...")
-    data, count = supabase.table("recipes").insert(recipe).execute()
-
-    print(data)
