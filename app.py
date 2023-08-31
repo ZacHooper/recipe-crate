@@ -130,7 +130,7 @@ def lambda_handler(event, context):
     try:
         parsed_response = parser.parse(response)
     except Exception as e:
-        new_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI())
+        new_parser = OutputFixingParser.from_llm(parser=parser, llm=chat)
         parsed_response = new_parser.parse(response)
 
     parsed_response.book = book
